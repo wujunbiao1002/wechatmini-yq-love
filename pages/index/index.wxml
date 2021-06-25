@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<!--header-->
+<view class="container">
+  <view class="header">
+    <image src="../../static/headPortrait.jpg" class="headPortrait" mode="cover" animation="{{animation}}"></image>
+  </view>
+
+  <!--centent-->
+  <view class="centent">
+    <view class="cake">
+      <view class="plate"> </view>
+      <view class="layer layer-bottom"></view>
+      <view class="layer layer-middle"></view>
+      <view class="layer layer-top">
+        <view class="blessing" wx:if="{{showBlessing}}"><text>24\nHappy Birthday!</text></view>
+        <view class="blessing" wx:if="{{!showBlessing}}"><text>Happy \n Every Day!</text></view>
+      </view>
+      <view class="icing"></view>
+      <view class="drip drip-1"></view>
+      <view class="drip drip-2"></view>
+      <view class="drip drip-3"></view>
+      <view class="candle">
+        <view class="flame"></view>
+      </view>
+    </view>
+    <view>
+      <image src="../../static/rose.png" class="roseLeft" ></image>
+      <image src="../../static/rose.png" class="roseRight"></image>
+    </view>
+  </view>
+
+  <!--footer-->
+  <view class="footer">
+    <text>世界已经有你\n </text>
+    <text>{{dateTime}}</text>
+  </view>
+</view>
