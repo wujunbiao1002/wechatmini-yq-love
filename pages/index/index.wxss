@@ -30,7 +30,7 @@
     width: 250px;
     color: rgb(212, 117, 48);
     position: absolute;
-    z-index: 99999;
+    z-index: 9000;
     font-style: italic;
     text-shadow: rgb(206, 140, 93) 0.1em 0.1em 0.2em;
     font-weight: 600;
@@ -41,22 +41,73 @@
     text-align: center;
     height: 670px;
 }
-.roseLeft{
+
+.showLove {
+    display: block;
+}
+
+.noShowLove {
+    display: none;
+}
+
+.song {
+    z-index: 9999;
+}
+
+.roseLeft {
     position: absolute;
-    transform: rotate(330deg);
+    transform: rotate(350deg);
     bottom: 10px;
     left: 10px;
     height: 123px;
     width: 79px;
 }
-.roseRight{
+
+.roseLeft2 {
     position: absolute;
     transform: rotate(30deg);
+    bottom: 10px;
+    left: 10px;
+    height: 123px;
+    width: 79px;
+}
+
+.roseLeft3 {
+    position: absolute;
+    transform: rotate(70deg);
+    bottom: 10px;
+    left: 10px;
+    height: 123px;
+    width: 79px;
+}
+
+.roseRight {
+    position: absolute;
+    transform: rotate(10deg);
     bottom: 10px;
     right: 10px;
     height: 123px;
     width: 79px;
 }
+
+.roseRight2 {
+    position: absolute;
+    transform: rotate(-30deg);
+    bottom: 10px;
+    right: 10px;
+    height: 123px;
+    width: 79px;
+}
+
+.roseRight3 {
+    position: absolute;
+    transform: rotate(-70deg);
+    bottom: 10px;
+    right: 10px;
+    height: 123px;
+    width: 79px;
+}
+
 .footer {
     position: fixed;
     bottom: 15px;

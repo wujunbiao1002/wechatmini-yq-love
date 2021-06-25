@@ -23,15 +23,24 @@
         <view class="flame"></view>
       </view>
     </view>
-    <view>
-      <image src="../../static/rose.png" class="roseLeft" ></image>
-      <image src="../../static/rose.png" class="roseRight"></image>
-    </view>
   </view>
 
   <!--footer-->
   <view class="footer">
-    <text>世界已经有你\n </text>
+    <view>
+      <view bindtap="previousSong" class="song">
+        <image src="../../static/rose.png" class="roseLeft"></image>
+        <image src="../../static/rose.png" class="roseLeft2"></image>
+        <image src="../../static/rose.png" class="roseLeft3"></image>
+      </view>
+      <view bindtap="nextSong" class="song">
+        <image src="../../static/rose.png" class="roseRight"></image>
+        <image src="../../static/rose.png" class="roseRight2"></image>
+        <image src="../../static/rose.png" class="roseRight3"></image>
+      </view>
+    </view>
+    <view class='{{showLove ?"shwoLove":"noShowLove"}}'><text>爱你+{{loveNum}}\n\n\n</text></view>
+    <text>世界已经有你\n</text>
     <text>{{dateTime}}</text>
   </view>
 </view>

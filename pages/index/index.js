@@ -14,18 +14,29 @@ Page({
             'http://tomhjy.com:14777/yqlove/4.mp3',
             'http://tomhjy.com:14777/yqlove/5.mp3',
             'http://tomhjy.com:14777/yqlove/6.mp3',
-            'http://tomhjy.com:14777/yqlove/7.mp3'    
+            'http://tomhjy.com:14777/yqlove/7.mp3',
+            'http://tomhjy.com:14777/yqlove/8.mp3',
+            'http://tomhjy.com:14777/yqlove/9.mp3',
+            'http://tomhjy.com:14777/yqlove/10.mp3'
         ],
         dateTime: '',
         animation: '',
-        showBlessing: false
+        showBlessing: false,
+        audio: '',
+        songIndex: 0,
+        songNum: 10,
+        loveNum: 0,
+        showLove: false,
     },
     onLoad() {
         // 初始化音乐
         var audio = wx.createInnerAudioContext()
-        audio.src = this.data.audioUrl[Math.floor(Math.random() * 7)]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        audio.src = this.data.audioUrl[Math.floor(Math.random() * this.data.songNum)]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
         audio.play();
         audio.loop = true;
+        this.setData({
+            audio
+        });
 
         // 初始化日期显示
         this.showDateTime();
@@ -38,13 +49,54 @@ Page({
         // 定时切换
         this.showBlessing();
     },
+    // 上一首
+    previousSong() {
+        var audio = this.data.audio;
+        var songIndex = --this.data.songIndex;
+        if (songIndex < 0) {
+            songIndex = this.data.songNum - 1;
+        }
+        audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        audio.play();
+        audio.loop = true;
+        var loveNum = ++this.data.loveNum;
+        this.setData({
+            songIndex,
+            loveNum,
+            showLove: true
+        })
+        // this.closeShowLove();
+    },
+    // 下一首
+    nextSong() {
+        var audio = this.data.audio;
+        var songIndex = ++this.data.songIndex;
+        audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        audio.play();
+        audio.loop = true;
+        var loveNum = ++this.data.loveNum;
+        this.setData({
+            songIndex,
+            loveNum,
+            showLove: true
+        })
+        // this.closeShowLove();
+    },
+    closeShowLove() {
+        setTimeout(() => {
+            this.setData({
+                showLove: false
+            })
+        }, 5000);
+    },
+    // 祝福语切换
     showBlessing() {
         setTimeout(this.showBlessing, 5000);
         this.setData({
             showBlessing: !this.data.showBlessing
         })
     },
-
+    // 出生到现在天数
     showDateTime() {
         setTimeout(this.showDateTime, 1000);
         var BirthDay = new Date("06/29/1997 00:00:00"); //这个日期是可以修改的
