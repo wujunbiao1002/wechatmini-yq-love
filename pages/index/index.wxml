@@ -12,8 +12,9 @@
       <view class="layer layer-bottom"></view>
       <view class="layer layer-middle"></view>
       <view class="layer layer-top">
-        <view class="blessing" wx:if="{{showBlessing}}"><text>24\nHappy Birthday!</text></view>
-        <view class="blessing" wx:if="{{!showBlessing}}"><text>Happy \n Every Day!</text></view>
+        <view class="blessing" wx:if="{{showBlessing%3==0}}" ><text>小仙女\nHappy Birthday!</text></view>
+        <view class="blessing" wx:if="{{showBlessing%3==1}}"><text>女神\nHappy Every Day!</text></view>
+        <view class="blessing" wx:if="{{showBlessing%3==2}}"><text>笨犇\nI Love You!</text></view>
       </view>
       <view class="icing"></view>
       <view class="drip drip-1"></view>
