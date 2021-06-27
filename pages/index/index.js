@@ -21,7 +21,7 @@ Page({
         ],
         dateTime: '',
         animation: '',
-        showBlessing: false,
+        showBlessing: -1,
         audio: '',
         songIndex: 0,
         songNum: 10,
@@ -91,9 +91,9 @@ Page({
     },
     // 祝福语切换
     showBlessing() {
-        setTimeout(this.showBlessing, 5000);
+        setTimeout(this.showBlessing, 4000);
         this.setData({
-            showBlessing: !this.data.showBlessing
+            showBlessing: ++this.data.showBlessing
         })
     },
     // 出生到现在天数
