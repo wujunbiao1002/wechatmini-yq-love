@@ -1,2 +1,2 @@
-# wechatmini-yq-love
-微信小程序-YQ-LOVE
+微信小程序-生日祝福
+小程序搜索：YQLOVE
