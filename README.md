@@ -1,7 +1,7 @@
 # 微信小程序-生日记录
 
 # LOGO
-![LOGO](https://github.com/wujunbiao1002/wechatmini-yq-love/blob/main/doc/YQ2.jpg)
+![LOGO](https://github.com/wujunbiao1002/wechatmini-yq-love/blob/main/doc/YQ2.png)
 
 # 演示地址
 1. 微信小程序搜索：YQLOVE
