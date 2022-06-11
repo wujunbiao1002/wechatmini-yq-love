@@ -8,16 +8,11 @@ const _ANIMATION_TIME = 500; // 动画播放一次的时长ms
 
 Page({
     data: {
-        audioUrl: ['http://tomhjy.com:14777/yqlove/1.mp3',
-            'http://tomhjy.com:14777/yqlove/2.mp3',
-            'http://tomhjy.com:14777/yqlove/3.mp3',
-            'http://tomhjy.com:14777/yqlove/4.mp3',
-            'http://tomhjy.com:14777/yqlove/5.mp3',
-            'http://tomhjy.com:14777/yqlove/6.mp3',
-            'http://tomhjy.com:14777/yqlove/7.mp3',
-            'http://tomhjy.com:14777/yqlove/8.mp3',
-            'http://tomhjy.com:14777/yqlove/9.mp3',
-            'http://tomhjy.com:14777/yqlove/10.mp3'
+        audioUrl: [
+            'http://music.163.com/song/media/outer/url?id=1330348068.mp3',
+            'http://music.163.com/song/media/outer/url?id=1825496057.mp3',
+            'http://music.163.com/song/media/outer/url?id=1808492017.mp3',
+            'http://music.163.com/song/media/outer/url?id=86369.mp3'
         ],
         dateTime: '',
         animation: '',
@@ -31,7 +26,8 @@ Page({
     onLoad() {
         // 初始化音乐
         var audio = wx.createInnerAudioContext()
-        audio.src = this.data.audioUrl[Math.floor(Math.random() * this.data.songNum)]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        // audio.src = this.data.audioUrl[Math.floor(Math.random() * this.data.songNum)]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        audio.src = 'http://music.163.com/song/media/outer/url?id=1808492017.mp3'
         audio.play();
         audio.loop = true;
         this.setData({
@@ -56,9 +52,9 @@ Page({
         if (songIndex < 0) {
             songIndex = this.data.songNum - 1;
         }
-        audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
-        audio.play();
-        audio.loop = true;
+        // audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        // audio.play();
+        // audio.loop = true;
         var loveNum = ++this.data.loveNum;
         this.setData({
             songIndex,
@@ -71,9 +67,9 @@ Page({
     nextSong() {
         var audio = this.data.audio;
         var songIndex = ++this.data.songIndex;
-        audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
-        audio.play();
-        audio.loop = true;
+        // audio.src = this.data.audioUrl[songIndex % this.data.songNum]; // src 可以设置 http(s) 的路径，本地文件路径或者代码包文件路径
+        // audio.play();
+        // audio.loop = true;
         var loveNum = ++this.data.loveNum;
         this.setData({
             songIndex,
